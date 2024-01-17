@@ -111,11 +111,11 @@ do
 done
 
 if [[ $BBBApplicationVersion == *"25"* ]]; then
-  wget -qO- https://ubuntu.bigbluebutton.org/bbb-install-2.5.sh | bash -s -- -v $BBBApplicationVersion -s $instance_fqdn -e $BBBOperatorEMail -j
+  wget -qO- https://raw.githubusercontent.com/KidsaEnglish/bbb-install/v2.7.x-release_custom/bbb-install.sh | bash -s -- -v $BBBApplicationVersion -s $instance_fqdn -e $BBBOperatorEMail -j
 elif [[ $BBBApplicationVersion == *"26"* ]]; then
-  wget -qO- https://ubuntu.bigbluebutton.org/bbb-install-2.6.sh | bash -s -- -v $BBBApplicationVersion -s $instance_fqdn -e $BBBOperatorEMail -j
+  wget -qO- https://raw.githubusercontent.com/KidsaEnglish/bbb-install/v2.7.x-release_custom/bbb-install.sh | bash -s -- -v $BBBApplicationVersion -s $instance_fqdn -e $BBBOperatorEMail -j
 elif [[ $BBBApplicationVersion == *"27"* ]]; then
-  wget -qO- https://ubuntu.bigbluebutton.org/bbb-install-2.7.sh | bash -s -- -v $BBBApplicationVersion -s $instance_fqdn -e $BBBOperatorEMail -j
+  wget -qO- https://raw.githubusercontent.com/KidsaEnglish/bbb-install/v2.7.x-release_custom/bbb-install.sh | bash -s -- -v $BBBApplicationVersion -s $instance_fqdn -e $BBBOperatorEMail -j
 fi
 
 groupadd -g 2000 scalelite-spool

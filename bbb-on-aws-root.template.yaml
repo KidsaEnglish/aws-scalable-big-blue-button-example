@@ -36,9 +36,9 @@ Parameters:
   BBBApplicationVersion:
     Description: Version of the Big Blue Button Application
     Type: String
-    Default: focal-260
+    Default: focal-270
     AllowedValues: 
-      - focal-260
+      - focal-270
   BBBApplicationInstanceAMIParameter: 
     Description: Ubuntu Version to be deployed for Application Instances 
     Default: "/aws/service/canonical/ubuntu/server/20.04/stable/current/amd64/hvm/ebs-gp2/ami-id"

@@ -1,10 +1,10 @@
 {
   "Parameters" : {
-    "BBBApplicationVersion": "focal-260",
+    "BBBApplicationVersion": "focal-270",
     "BBBApplicationInstanceAMIParameter": "/aws/service/canonical/ubuntu/server/20.04/stable/current/amd64/hvm/ebs-gp2/ami-id",
     "BBBECSInstanceType": "fargate",
-    "BBBApplicationInstanceType": "t3a.medium",
-    "BBBApplicationDataVolumeSize": 50,
+    "BBBApplicationInstanceType": "c5a.2xlarge",
+    "BBBApplicationDataVolumeSize": 500,
     "BBBApplicationRootVolumeSize": 20,
     "BBBDBInstanceType": "db.serverless",
     "BBBServerlessAuroraMinCapacity": 0.5,
@@ -35,6 +35,7 @@
     "BBBGreenlightCPU": 512,
     "BBBScaleliteMemory": 2048,
     "BBBScaleliteCPU": 1024,
-    "BBBFrontendType": "Greenlight"
+    "BBBFrontendType": "Greenlight",
+    "BBBSESValidated": true
   }
 }
