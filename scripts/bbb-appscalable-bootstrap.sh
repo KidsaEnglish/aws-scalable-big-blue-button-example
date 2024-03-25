@@ -62,7 +62,19 @@ apt -y install ./build/amazon-efs-utils*deb
 # Set instance Hostname
 instance_ipv4=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
 instance_random=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 6 | head -n 1)
-instance_publichostname=vc-$instance_random
+instance_name_response=$(curl -s -w "%{http_code}" -X GET https://kd2urepld3x6jjhptnsohh5ani0zgzyn.lambda-url.us-east-1.on.aws/)
+
+if [[ "${instance_name_response: -3}" == "200" ]]; then
+    # Extract only the body from the response
+    instance_publichostname=$(echo "${instance_name_response}" | sed 's/[^a-zA-Z]//g')
+else
+    # If the request fails, use a default name with the random string
+    instance_publichostname="vc-$instance_random"
+fi
+
+
+
+
 instance_fqdn=$instance_publichostname.$BBBDomainName
 
 # register in route53
